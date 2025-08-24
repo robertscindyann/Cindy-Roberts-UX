@@ -133,6 +133,12 @@ section h3 {
   border-radius: 8px;
   margin-bottom: 1rem;
 }
+/* Special style for logos to prevent cropping */
+/* .project-card.logo img {
+  object-fit: contain;
+  padding: 20px;
+  height: 200px;
+} */
 footer {
   text-align: center;
   padding: 2rem;
