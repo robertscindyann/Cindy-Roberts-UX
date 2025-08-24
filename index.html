@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX Portfolio | Cindy-Ann Roberts</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <header>
+      <h1><a href="#">Cindy-Ann Roberts</a></h1>
+      <nav>
+        <a href="#about" target="_blank">About</a>
+        <a href="#projects" target="_blank">Work</a>
+        <a href="#contact" target="_blank">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h2>Hi, I’m Cindy-Ann Roberts</h2>
+      <p>A UX designer with a background in finance, frontend development, and web design. I create digital experiences
+        that are beautiful, intuitive, and impactful.</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </section>
+
+
+    <section id="about" data-animate>
+      <div class="about">
+        <h3>About Me</h3>
+        <p>I currently work as a Client Relationship Advocate at Fidelity Investments, where I’ve developed deep empathy
+          for clients navigating digital financial tools. With a degree in Frontend Development and Web Design, I blend
+          technical expertise with user-centered design thinking to create intuitive experiences. My passion is
+          designing
+          interfaces that simplify complexity and bring delight to users.</p>
+      </div>
+    </section>
+    <section id="projects" data-animate>
+      <h3>Selected Work</h3>
+      <div class="projects">
+        <div class="project-card">
+          <img src="image/diabetesTablet.jpg" alt="Diabetes Tablet Mockup">
+          <h4>Diabetes Awareness Website</h4>
+          <p>Adobe XD mockup designed to make health resources accessible and easy to navigate.</p>
+        </div>
+        <div class="project-card">
+          <img src="image/DanceGroupPic.webp" alt="Dance Team Group Photo">
+          <h4>High School Dance Team Logo</h4>
+          <p>Custom logo design featured on team apparel and group photos, building team identity.</p>
+        </div>
+        <div class="project-card">
+          <img src="image/Ignite Your Run.jpg" alt="Nike Ignite Your Run Ad">
+          <h4>Nike Concept Ad</h4>
+          <p>Photoshop project combining photography and digital design, presented as a campaign ad.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="contact" data-animate>
+      <div class="contact">
+        <h3>Get In Touch</h3>
+        <p>If you’d like to collaborate or learn more about my work, feel free to reach out!</p>
+        <p><strong>Email:</strong>cindyannroberts1@gmail.com</p>
+        <p><strong>LinkedIn:</strong> <a href="#">linkedin.com/in/yourname</a></p>
+      </div>
+    </section>
+
+
+    <footer>
+      <p>© 2025 Cindy-Ann Roberts – Designed & Developed by Me</p>
+    </footer>
+
+
+    <script>
+      // Scroll-triggered fade-in animation
+      const elements = document.querySelectorAll('[data-animate]');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+
+      elements.forEach(el => observer.observe(el));
+    </script>
+  </body>
+
+</html>
