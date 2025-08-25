@@ -79,6 +79,7 @@ nav a:hover {
   max-width: 650px;
   margin-bottom: 2rem;
   color: #444;
+  line-height: 1.8;
 }
 
 /* Button */
@@ -112,14 +113,23 @@ section h3 {
   text-align: center;
 }
 
-/* About / Contact */
 .about,
 .contact {
-  background: white;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  border: 1px solid #eee;
+  background: var(--neutral);
+  padding: 5rem 2rem;
+  text-align: center;
+  max-width: none; /* full width */
+}
+
+.about p,
+.contact p {
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+
+#projects {
+  background: var(--neutral);
+  padding: 5rem 2rem;
 }
 
 /* Projects Grid */
