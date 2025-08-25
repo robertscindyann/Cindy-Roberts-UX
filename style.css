@@ -142,6 +142,11 @@ section h3 {
   transform: translateY(-5px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
+.project-card {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit; /* keep text the same color */
+}
 
 .project-card img {
   width: 100%;
