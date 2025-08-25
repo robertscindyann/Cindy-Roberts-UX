@@ -293,6 +293,25 @@ footer {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+/* Inite sneaker ad styles */
+.design-assets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  /* gap: 30px; */
+}
+.design-assets img {
+  max-width: 300px; /* keeps them smaller than full mockups */
+  object-fit: contain;
+  margin-bottom: 0;
+}
+
+.design-assets figcaption {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Media Queries */
 @media (min-width: 768px) {
   .project-images {
     grid-template-columns: 1fr 1fr;
