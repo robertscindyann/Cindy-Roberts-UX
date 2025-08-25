@@ -242,3 +242,85 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Wildcats dance team styles */
+.project-case {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.project-case h2 {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+.project-case p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #444;
+}
+.project-case h3 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+
+  padding-left: 0.75rem;
+}
+
+.project-images {
+  display: grid;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.project-images img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: #fafafa;
+  padding: 10px;
+}
+#wildcats-logo-variation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .project-images {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+ul {
+  padding-left: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: var(--dark);
+}
+
+footer {
+  margin-top: 4rem;
+}
