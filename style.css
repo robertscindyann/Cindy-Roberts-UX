@@ -13,6 +13,8 @@
   box-sizing: border-box;
   font-family: var(--font);
 }
+
+/*Body*/
 body {
   background: var(--neutral);
   color: var(--dark);
@@ -202,7 +204,7 @@ section h3 {
 /* Footer */
 footer {
   text-align: center;
-  padding: 2rem;
+  padding: 1rem;
   background: var(--dark);
   color: white;
   margin-top: 3rem;
