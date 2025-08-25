@@ -19,6 +19,8 @@ body {
   line-height: 1.7;
   font-family: var(--font-sans);
 }
+
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
@@ -31,7 +33,7 @@ header {
   border-bottom: 1px solid #eee;
 }
 
-header h1 a {
+header h1 {
   font-size: 1.4rem;
   color: var(--accent);
   font-family: var(--font-serif);
@@ -51,12 +53,13 @@ nav a:hover {
   color: var(--accent);
 }
 
+/* Hero Section */
 .hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: 70vh;
   text-align: center;
   background: linear-gradient(180deg, var(--blush) 0%, white 100%);
   padding: 2rem;
@@ -76,6 +79,7 @@ nav a:hover {
   color: #444;
 }
 
+/* Button */
 .btn {
   padding: 0.8rem 1.5rem;
   border: 2px solid var(--accent);
@@ -91,6 +95,8 @@ nav a:hover {
   background: var(--accent);
   color: white;
 }
+
+/* Sections */
 section {
   padding: 4rem 2rem;
   max-width: 1100px;
@@ -99,50 +105,113 @@ section {
 
 section h3 {
   font-size: 2rem;
+  font-weight: 600;
   margin-bottom: 1.5rem;
   text-align: center;
 }
 
+/* About / Contact */
 .about,
 .contact {
   background: white;
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eee;
 }
 
+/* Projects Grid */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 2.5rem;
 }
 .project-card {
   background: white;
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s;
+  border: 1px solid #eee;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
 
 .project-card img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  background: #fdfdfd;
 }
-/* Special style for logos to prevent cropping */
-/* .project-card.logo img {
+/* Special styles for logo/book mockups */
+.project-card.logo img,
+.project-card.book img {
   object-fit: contain;
   padding: 20px;
   height: 200px;
-} */
+}
+/* Project Case Studies */
+.project-case {
+  background: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  border: 1px solid #eee;
+  margin-bottom: 5rem;
+}
+
+.project-case img {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+}
+
+.project-case ul {
+  margin-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Back link */
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.project-case img {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 2rem;
   background: var(--dark);
   color: white;
   margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+/* Animations */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+[data-animate].visible {
+  opacity: 1;
+  transform: translateY(0);
 }

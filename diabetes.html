@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Awareness Website | Cindy-Ann Roberts</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <header>
+      <h1>Cindy-Ann Roberts</h1>
+      <nav>
+        <a href="index.html#projects">Back to Portfolio</a>
+      </nav>
+    </header>
+
+    <main class="project-case">
+      <a href="index.html#projects" class="back-link">&larr; Back to Portfolio</a>
+      <h2>Diabetes Awareness Website</h2>
+      <p>This project involved designing and coding a responsive health awareness website aimed at providing accessible
+        resources and information for users managing diabetes.</p>
+
+      <h3>Project Goals</h3>
+      <ul>
+        <li>Provide clear, accessible information for users with diabetes</li>
+        <li>Create a visually appealing and easy-to-navigate layout</li>
+        <li>Showcase both design and frontend coding skills</li>
+      </ul>
+
+      <h3>Design Mockups</h3>
+      <img src="diabetes-mockup.jpg" alt="Diabetes Awareness Website Mockup">
+
+      <h3>Website Screenshots</h3>
+      <img src="diabetes-homepage.jpg" alt="Homepage Screenshot">
+      <img src="diabetes-resources.jpg" alt="Resources Page Screenshot">
+      <img src="diabetes-contact.jpg" alt="Contact Page Screenshot">
+
+      <h3>Key Takeaways</h3>
+      <ul>
+        <li>Improved understanding of responsive design and accessibility standards</li>
+        <li>Ability to translate design mockups into functional HTML/CSS pages</li>
+        <li>Experience balancing visual appeal with user experience</li>
+      </ul>
+    </main>
+
+    <footer>
+      <p>© 2025 Cindy-Ann Roberts – Designed & Developed by Me</p>
+    </footer>
+    <script>
+      const elements = document.querySelectorAll('[data-animate]');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      elements.forEach(el => observer.observe(el));
+    </script>
+
+
+  </body>
+
+</html>
