@@ -304,7 +304,7 @@ footer {
   margin-bottom: 0;
 }
 
-.design-assets figcaption {
+figcaption {
   font-size: 0.85rem;
   color: #777;
 }
@@ -319,6 +319,34 @@ footer {
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
   font-weight: 600;
+}
+.research-insights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.insight-card {
+  background: var(--neutral);
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.insight-card:hover {
+  transform: translateY(-5px);
+}
+.insight-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+.insight-card p {
+  font-size: 0.95rem;
+  color: #444;
 }
 
 /* Grouped image sections */
