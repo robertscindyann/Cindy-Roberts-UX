@@ -393,6 +393,12 @@ figcaption {
   .project-images {
     grid-template-columns: 1fr 1fr;
   }
+
+  .luna-fairy-assets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 1.5rem;
+  }
 }
 
 ul {
