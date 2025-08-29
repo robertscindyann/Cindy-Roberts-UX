@@ -14,6 +14,14 @@
   <body>
     <header>
       <h1>Cindy-Ann Roberts</h1>
+
+      <!-- Hamburger icon -->
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
       <nav>
         <a href="#about">About</a>
         <a href="#projects">Work</a>
@@ -118,6 +126,16 @@
 
 
     <script>
+      //Hamburger Visibility
+      const hamburger = document.querySelector('.hamburger');
+      const nav = document.querySelector('nav');
+
+      hamburger.addEventListener('click', () => {
+        nav.classList.toggle('active');       // toggle nav menu
+        hamburger.classList.toggle('active'); // animate hamburger
+      });
+
+
       // Scroll-triggered fade-in animation
       const elements = document.querySelectorAll('[data-animate]');
       const observer = new IntersectionObserver((entries) => {
