@@ -126,15 +126,23 @@
 
 
     <script>
-      //Hamburger Visibility
+      // Hamburger Visibility
       const hamburger = document.querySelector('.hamburger');
       const nav = document.querySelector('nav');
+      const navLinks = document.querySelectorAll('nav a'); // 👈 get all nav links
 
       hamburger.addEventListener('click', () => {
         nav.classList.toggle('active');       // toggle nav menu
         hamburger.classList.toggle('active'); // animate hamburger
       });
 
+      // 👇 Close nav when a link is clicked
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('active');
+          hamburger.classList.remove('active');
+        });
+      });
 
       // Scroll-triggered fade-in animation
       const elements = document.querySelectorAll('[data-animate]');
@@ -145,7 +153,6 @@
           }
         });
       }, { threshold: 0.1 });
-
 
       elements.forEach(el => observer.observe(el));
     </script>
