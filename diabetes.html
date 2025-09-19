@@ -21,32 +21,35 @@
 
     <main class="project-case">
       <a href="index.html#projects" class="back-link">&larr; Back to Portfolio</a>
-      <h2>Diabetes Awareness Website</h2>
+      <h2>Case Study: Diabetes Awareness for Teens</h2>
       <p>
-        This project involved designing and coding a responsive health awareness website aimed at providing accessible
-        resources and information for users managing diabetes.
+        For my passion project, I designed an educational website aimed at high school students to raise awareness about
+        type 2 diabetes. Since more than 5,700 kids and teens (ages 10–19) are diagnosed each year, I wanted to create a
+        platform that makes this complex topic easier to understand and encourages healthier choices.
       </p>
 
-      <!-- Project Goals -->
-      <h3>Project Goals</h3>
+      <!-- The Problem -->
+      <h3>The Problem</h3>
+      <p>Diabetes information online is often:</p>
       <ul>
-        <li>Provide clear, accessible information for users with diabetes</li>
-        <li>Create a visually appealing and easy-to-navigate layout</li>
-        <li>Showcase both design and frontend coding skills</li>
+        <li>Overly medical → hard for teens to relate to</li>
+        <li>Text-heavy → not engaging for a younger audience</li>
+        <li>Adult-focused → most resources target parents or healthcare providers</li>
+      </ul>
+      <p>High school students need simple, engaging, and relatable content that connects to their everyday life (sports,
+        snacks, energy levels).</p>
+
+      <!-- Research & Insights -->
+      <h3>Research & Insights</h3>
+      <ul>
+        <li>I reviewed CDC and ADA (American Diabetes Association) resources to ensure medical accuracy.</li>
+        <li>I spoke informally with teens and parents to understand what motivates teens to care about health.</li>
+        <li>Key insight: visuals, interactivity, and clear “what this means for me” messaging are crucial for
+          engagement.</li>
       </ul>
 
-      <!-- Target Audience -->
-      <h3>Target Audience</h3>
-      <p>
-        This website was specifically designed for high school students learning about diabetes.
-        The content was simplified into accessible, engaging sections with visuals that make health
-        information less intimidating. The goal was to empower students with knowledge they can
-        easily understand and apply in daily life.
-      </p>
-
-      <!-- User Research -->
-      <section class="project-case">
-        <h3>User Research</h3>
+      <div>
+        <h3>User Interviews</h3>
         <p>
           I interviewed high school students to better understand their awareness of diabetes.
           The findings revealed important knowledge gaps and shaped how I designed the site.
@@ -70,14 +73,33 @@
             <p>They thought diabetes mainly affects overweight people and didn’t see themselves at risk.</p>
           </div>
         </div>
-      </section>
+      </div>
+      <!-- Design Goals -->
+      <h3>Design Goals</h3>
+      <ul>
+        <li>Simplify language → use a conversational tone, avoid jargon.</li>
+        <li>Visual-first learning → diagrams, icons, and images to explain concepts.</li>
+        <li>Relatability → highlight activities and foods teens recognize.</li>
+        <li>Actionable choices → show how lifestyle changes (sports, superfoods) connect to prevention.</li>
+        <li>Ensure accessibility with high-contrast colors, alt text, keyboard navigation, and plain language.</li>
+      </ul>
 
-      <!-- UX Research / Hub-and-Spoke -->
-      <h3>UX Research & Planning</h3>
+      <!-- Design Process -->
+      <h3>Design Process</h3>
+      <!-- Information Architecture -->
+      <h4>Information Architecture (Hub-and-Spoke)</h4>
       <p>
-        To guide content and feature decisions, I created a hub-and-spoke diagram outlining the key topics and user
-        pathways.
+        I structured the website using a <strong>hub-and-spoke model</strong>. The homepage acts as the hub,
+        giving a clear overview, while subpages (spokes) allow users to dive deeper into focused topics:
       </p>
+      <ul>
+        <li><strong>What is Diabetes?</strong> — Simple introduction with plain language.</li>
+        <li><strong>How the Body Works</strong> — Visuals showing the pancreas and insulin process.</li>
+        <li><strong>Food → Energy</strong> — Relatable examples using everyday foods.</li>
+        <li><strong>Effects on Daily Life</strong> — Icons illustrating symptoms like thirst and fatigue.</li>
+        <li><strong>Prevention Tips</strong> — Actionable steps, such as exercise and superfoods.</li>
+      </ul>
+      <p>This approach ensures teens can explore topics at their own pace without feeling overwhelmed.</p>
       <div class="process-images">
         <figure>
           <img src="image/diabetesHubAndSpoke.png" alt="Hub and spoke diagram showing diabetes site content">
@@ -89,8 +111,54 @@
         </figure>
       </div>
 
-      <!-- Final Designs -->
-      <h3>Final Website Screenshots</h3>
+
+
+      <!-- Wireframing & Layout -->
+      <h4>Wireframing & Layout</h4>
+      <ul>
+        <li>I started with low-fidelity sketches to plan the hierarchy of content.</li>
+        <li>Focused on short sections + strong visuals so users wouldn’t feel overwhelmed.</li>
+      </ul>
+
+
+      <h4>Visual Design</h4>
+      <ul>
+        <li>Colors: Used bold, high-contrast colors for accessibility and energy.</li>
+        <li>Typography: Chose Roboto for a clean, modern look that reads easily on screens.</li>
+        <li>Imagery: Real teens in action (sports, classroom, daily life) + icons to reinforce key ideas.</li>
+      </ul>
+
+      <!-- Accessibility Considerations -->
+      <h4>Accessibility Considerations</h4>
+
+      <ul>
+        <li>Readable fonts: Chose Roboto with generous line spacing for easy scanning.</li>
+        <li>Color contrast: Used high-contrast colors to ensure text is legible against backgrounds (helpful for
+          color-blind users).</li>
+        <li>Alt text: Added descriptive alt tags to all images and icons so screen readers can convey meaning.</li>
+        <li>Skip navigation link: Included a “Skip to main content” link for users navigating with keyboards.</li>
+        <li>Video content: Embedded an educational video but ensured text explanations were also present for users who
+          can’t access audio.</li>
+        <li>Plain language: Used simple, conversational text to reduce cognitive load, making it easier for both teens
+          and users with reading difficulties.</li>
+      </ul>
+
+      <!-- Prototype & Development -->
+      <h4>Prototype & Development</h4>
+      <ul>
+        <li>Interactive mockups created in Figma.</li>
+        <li>Final site built with HTML5, CSS3, and responsive design for all devices.</li>
+      </ul>
+
+      <!-- The Solution -->
+      <h3>The Solution</h3>
+      <p>A responsive educational website that helps teens:</p>
+      <ul>
+        <li>Understand what diabetes is (without medical jargon).</li>
+        <li>See how it affects the body through visuals and icons.</li>
+        <li>Learn prevention tips through relatable actions (basketball, choosing healthy foods).</li>
+        <li>Stay engaged with a mix of text, images, and video content.</li>
+      </ul>
       <div class="project-images">
         <figure>
           <img src="image/diabetesDesktop.png" alt="Desktop screenshot of diabetes website">
@@ -106,25 +174,33 @@
         </figure>
       </div>
 
+
+
+      <!-- Reflection & Next Steps -->
+      <h3>Reflection & Next Steps</h3>
+      <ul>
+        <li>What worked: The balance of visuals + short copy made the content approachable for a younger audience.
+        </li>
+        <li>What I’d improve: Add interactive elements like quizzes (“Is this a superfood?”), gamified challenges
+          (track
+          your weekly activity), or peer stories.</li>
+        <li>Impact potential: With more testing in schools or health clubs, this could become a tool for early
+          diabetes
+          prevention education.</li>
+      </ul>
+
+
+
+
+
+
+
       <!-- Live Site Link -->
       <a href="https://robertscindyann.github.io/Diabetes-Site/" target="_blank" class="btn">View Live Site</a>
 
-      <!-- Key Takeaways -->
-      <h3>Key Takeaways</h3>
-      <ul>
-        <li>Improved understanding of responsive design and accessibility standards</li>
-        <li>Ability to translate design mockups into functional HTML/CSS pages</li>
-        <li>Experience balancing visual appeal with user experience</li>
-      </ul>
 
-      <!-- Skills -->
-      <h3>Skills Used</h3>
-      <ul>
-        <li>UX Research & User Flows</li>
-        <li>Wireframing in Adobe XD</li>
-        <li>HTML, CSS & Responsive Design</li>
-        <li>Accessibility Considerations</li>
-      </ul>
+
+
     </main>
 
 
