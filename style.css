@@ -567,7 +567,7 @@ footer {
   }
 }
 /* Wildcats Page – Dribbble-style solution grid */
-.wildcats-page .solution-gallery-collage {
+/* .wildcats-page .solution-gallery-collage {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
@@ -575,9 +575,145 @@ footer {
   background: #fff;
   padding: 1rem;
   border-radius: 12px;
-}
+} */
 
 /* Card-style layout for each image */
+/* .wildcats-page .solution-gallery-collage figure {
+  background: #fafafa;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding: 1rem;
+} */
+
+.wildcats-page .solution-gallery-collage figure:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Preserve full logo width */
+/* .wildcats-page .solution-gallery-collage img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+} */
+
+/* Captions below images */
+/* .wildcats-page .solution-gallery-collage figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.75rem;
+} */
+
+/* Responsive refinement */
+/* @media (min-width: 900px) {
+  .wildcats-page .solution-gallery-collage {
+    grid-template-columns: repeat(3, 1fr);
+  }
+} */
+
+/* @media (max-width: 768px) {
+  .wildcats-page .solution-gallery-collage {
+    grid-template-columns: 1fr;
+  }
+} */
+/* Wildcats Page – Solution Grid with Center Feature */
+
+/* .wildcats-page .solution-gallery-collage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+} */
+
+/* Each tile styled like a portfolio card */
+/* .wildcats-page .solution-gallery-collage figure {
+  background: #fafafa;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding: 1rem;
+} */
+
+/* .wildcats-page .solution-gallery-collage figure:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+} */
+
+/* Preserve logo proportions */
+/* .wildcats-page .solution-gallery-collage img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+} */
+
+/* Center photo larger + centered visually */
+/* .wildcats-page .solution-gallery-collage .center-feature {
+  grid-column: span 2;
+  grid-row: span 2;
+} */
+
+/* .wildcats-page .solution-gallery-collage .center-feature img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 16px;
+} */
+
+/* Captions */
+/* .wildcats-page .solution-gallery-collage figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.75rem;
+} */
+
+/* Larger layout on desktop for stronger visual hierarchy */
+/* @media (min-width: 1024px) {
+  .wildcats-page .solution-gallery-collage {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .wildcats-page .solution-gallery-collage .center-feature {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    justify-self: center;
+  }
+} */
+
+/* Stack gracefully on smaller screens */
+/* @media (max-width: 768px) {
+  .wildcats-page .solution-gallery-collage {
+    grid-template-columns: 1fr;
+  }
+  .wildcats-page .solution-gallery-collage .center-feature {
+    grid-column: auto;
+    grid-row: auto;
+  }
+} */
+/* Wildcats Page – Clean 2-Column Equal Grid for Solution Section */
+.wildcats-page .solution-gallery-collage {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 16px;
+}
+
+/* Card styling for each image tile */
 .wildcats-page .solution-gallery-collage figure {
   background: #fafafa;
   border-radius: 12px;
@@ -593,32 +729,110 @@ footer {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Preserve full logo width */
+/* Images maintain same width, centered, not cropped */
 .wildcats-page .solution-gallery-collage img {
-  width: auto;
-  max-width: 100%;
+  width: 100%;
   height: auto;
   object-fit: contain;
   display: block;
   margin: 0 auto;
+  border-radius: 8px;
 }
 
-/* Captions below images */
+/* Captions styling */
 .wildcats-page .solution-gallery-collage figcaption {
   font-size: 0.9rem;
   color: #555;
   margin-top: 0.75rem;
 }
 
-/* Responsive refinement */
-@media (min-width: 900px) {
-  .wildcats-page .solution-gallery-collage {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
+/* Responsive behavior */
+@media (max-width: 900px) {
   .wildcats-page .solution-gallery-collage {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+/* Wildcats Page – 2-Column Volume Grid for Solution Section */
+.wildcats-page .solution-gallery-collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  grid-template-rows: auto auto; /* two stacked rows */
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  align-items: stretch;
+}
+
+/* --- Layout placement --- */
+.wildcats-page .solution-gallery-collage .logo-tile {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.wildcats-page .solution-gallery-collage .group-tile {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.wildcats-page .solution-gallery-collage .backpack-tile {
+  grid-column: 2;
+  grid-row: 1 / span 2; /* spans both rows vertically */
+}
+
+/* --- Shared styling for all tiles --- */
+.wildcats-page .solution-gallery-collage figure {
+  background: #fafafa;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wildcats-page .solution-gallery-collage figure:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Image scaling and proportions --- */
+.wildcats-page .solution-gallery-collage img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+.wildcats-page .solution-gallery-collage .backpack-tile img {
+  height: 100%;
+  object-fit: cover; /* fills the tall right column neatly */
+  border-radius: 12px;
+}
+
+/* --- Caption styling --- */
+.wildcats-page .solution-gallery-collage figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.75rem;
+}
+
+/* --- Responsive layout --- */
+@media (max-width: 900px) {
+  .wildcats-page .solution-gallery-collage {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .wildcats-page .solution-gallery-collage .backpack-tile {
+    grid-column: auto;
+    grid-row: auto;
   }
 }
