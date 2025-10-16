@@ -21,21 +21,32 @@
 
     <main class="project-case">
       <a href="index.html#projects" class="back-link">&larr; Back to Portfolio</a>
-      <h2>UX Case Study: Diabetes Awareness for Teens</h2>
+      <h2>Designing an Educational Experience for Health Awareness</h2>
+      <p class="subtitle">UX Case Study — Diabetes Information Website (Designed & Coded)</p>
+      <div class="project-summary">
+        <ul>
+          <li><strong>Role:</strong> UX Designer & Front-End Developer</li>
+          <li><strong>Timeline:</strong> 6 weeks</li>
+          <li><strong>Tools:</strong> Figma, HTML, CSS, JavaScript</li>
+          <li><strong>Deliverables:</strong> Research synthesis, IA (hub-and-spoke), wireframes, responsive build</li>
+        </ul>
+      </div>
+
       <p>
-        For my passion project, I designed an educational website aimed at high school students to raise awareness about
-        type 2 diabetes. More than 5,700 U.S. teens (ages 10–19) are diagnosed each year, yet most online resources are
-        written for adults or healthcare providers. My goal was to create a platform that makes this complex topic
-        approachable for teens and motivates healthier lifestyle choices.
+        I designed and coded a responsive educational site to make diabetes basics easier to understand. The experience
+        focuses on <strong>plain language, calm visuals, and clear navigation</strong> so new learners can scan, orient,
+        and dive deeper without cognitive overload.
       </p>
 
       <!-- The Problem -->
       <h3>The Problem</h3>
-      <p>Existing diabetes education resources are not teen-friendly because they are:</p>
+      <p class="callout">
+        Health content online can be dense, medicalized, and hard to navigate—especially for new learners.
+      </p>
       <ul>
-        <li><strong>Overly medical</strong> – too much jargon, difficult to relate to</li>
-        <li><strong>Text-heavy</strong> – overwhelming for younger audiences</li>
-        <li><strong>Adult-focused</strong> – geared toward parents, doctors, or caregivers</li>
+        <li>Pages often group too much information without hierarchy.</li>
+        <li>Terminology creates friction for readers with lower health literacy.</li>
+        <li>Navigation does not support quick orientation or progressive exploration.</li>
       </ul>
 
 
@@ -157,6 +168,18 @@
         <li>Built final site with HTML5, CSS3, and responsive design for mobile, tablet, and desktop.</li>
       </ul>
 
+      <!-- Build -->
+      <h3>Front-End Build</h3>
+      <p>
+        I hand-coded the site using semantic HTML and modern CSS. Light JavaScript supports small interactions (e.g.,
+        mobile menu toggle) while keeping the experience fast and distraction-free.
+      </p>
+      <ul>
+        <li>Responsive grid + fluid type scale for comfortable reading on any device.</li>
+        <li>Semantic landmarks (header, nav, main, footer) and accessible link styling.</li>
+        <li>Consistent spacing system and component tokens for maintainability.</li>
+      </ul>
+
       <!-- The Solution -->
       <h3>The Solution</h3>
       <p>A responsive educational website that helps teens:</p>
@@ -194,16 +217,13 @@
         <li>Demonstrated how AI can accelerate research analysis and insight generation.</li>
       </ul>
 
-      <!-- Reflection & Next Steps -->
+      <!-- Reflection -->
       <h3>Reflection & Next Steps</h3>
-      <ul>
-        <li><strong>What worked:</strong> The balance of visuals and short copy made the content approachable for teens.
-        </li>
-        <li><strong>Next iteration:</strong> Add interactive elements like quizzes (“Is this a superfood?”), gamified
-          challenges (track your activity), and peer stories for added relevance.</li>
-        <li><strong>Future testing:</strong> Conduct usability testing with a larger group (10–15 teens) to measure
-          engagement and learning outcomes.</li>
-      </ul>
+      <p>
+        Building this project strengthened my skills in structuring complex information and coding for readability.
+        If I iterate, I’ll add simple wayfinding aids (breadcrumb, “On this page” anchor list) and gather usability
+        feedback from first-time learners to validate clarity.
+      </p>
 
       <!-- Live Site Link -->
       <a href="https://robertscindyann.github.io/Diabetes-Site/" target="_blank" class="btn">View Live Site</a>
@@ -219,6 +239,7 @@
 
       <p class="footer-copy">© 2025</p>
     </footer>
+
     <script>
       const elements = document.querySelectorAll('[data-animate]');
       const observer = new IntersectionObserver((entries) => {
