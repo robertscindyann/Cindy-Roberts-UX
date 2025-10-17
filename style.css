@@ -22,18 +22,20 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Header */
+/* --- Header setup --- */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: white;
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid #eee;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(1rem + env(safe-area-inset-top)) 1.5rem;
+  height: auto; /* don't force a fixed height */
+  box-sizing: border-box;
 }
+
 /* Hamburger icon */
 .hamburger {
   display: none;
@@ -571,142 +573,12 @@ footer {
     align-items: center;
   }
 }
-/* Wildcats Page – Dribbble-style solution grid */
-/* .wildcats-page .solution-gallery-collage {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2.5rem;
-  background: #fff;
-  padding: 1rem;
-  border-radius: 12px;
-} */
-
-/* Card-style layout for each image */
-/* .wildcats-page .solution-gallery-collage figure {
-  background: #fafafa;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-  padding: 1rem;
-} */
 
 .wildcats-page .solution-gallery-collage figure:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Preserve full logo width */
-/* .wildcats-page .solution-gallery-collage img {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-} */
-
-/* Captions below images */
-/* .wildcats-page .solution-gallery-collage figcaption {
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: 0.75rem;
-} */
-
-/* Responsive refinement */
-/* @media (min-width: 900px) {
-  .wildcats-page .solution-gallery-collage {
-    grid-template-columns: repeat(3, 1fr);
-  }
-} */
-
-/* @media (max-width: 768px) {
-  .wildcats-page .solution-gallery-collage {
-    grid-template-columns: 1fr;
-  }
-} */
-/* Wildcats Page – Solution Grid with Center Feature */
-
-/* .wildcats-page .solution-gallery-collage {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2.5rem;
-  background: #fff;
-  padding: 1rem;
-  border-radius: 12px;
-} */
-
-/* Each tile styled like a portfolio card */
-/* .wildcats-page .solution-gallery-collage figure {
-  background: #fafafa;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-  padding: 1rem;
-} */
-
-/* .wildcats-page .solution-gallery-collage figure:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-} */
-
-/* Preserve logo proportions */
-/* .wildcats-page .solution-gallery-collage img {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-} */
-
-/* Center photo larger + centered visually */
-/* .wildcats-page .solution-gallery-collage .center-feature {
-  grid-column: span 2;
-  grid-row: span 2;
-} */
-
-/* .wildcats-page .solution-gallery-collage .center-feature img {
-  width: 100%;
-  max-width: 800px;
-  border-radius: 16px;
-} */
-
-/* Captions */
-/* .wildcats-page .solution-gallery-collage figcaption {
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: 0.75rem;
-} */
-
-/* Larger layout on desktop for stronger visual hierarchy */
-/* @media (min-width: 1024px) {
-  .wildcats-page .solution-gallery-collage {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .wildcats-page .solution-gallery-collage .center-feature {
-    grid-column: 2 / 3;
-    grid-row: 1 / 3;
-    justify-self: center;
-  }
-} */
-
-/* Stack gracefully on smaller screens */
-/* @media (max-width: 768px) {
-  .wildcats-page .solution-gallery-collage {
-    grid-template-columns: 1fr;
-  }
-  .wildcats-page .solution-gallery-collage .center-feature {
-    grid-column: auto;
-    grid-row: auto;
-  }
-} */
 /* Wildcats Page – Clean 2-Column Equal Grid for Solution Section */
 .wildcats-page .solution-gallery-collage {
   display: grid;
@@ -953,69 +825,6 @@ footer .tagline {
   line-height: 1.6;
 }
 
-.project-card {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  border: 1px solid #eee;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-}
-
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-}
-
-.project-card img {
-  width: 100%;
-  border-radius: 8px;
-  object-fit: cover;
-  aspect-ratio: 16 / 9;
-}
-
-.project-card h4 {
-  margin-top: 1rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-transform: none;
-  transition: color 0.3s ease;
-}
-
-.project-card:hover h4 {
-  color: var(--accent);
-}
-
-.project-card p {
-  font-size: 0.95rem;
-  color: #444;
-  margin-top: 0.8rem;
-  line-height: 1.6;
-}
-
-.project-meta {
-  font-size: 0.85rem;
-  color: #777;
-  margin-top: 0.5rem;
-}
-
-.case-link {
-  color: var(--accent);
-  font-size: 0.9rem;
-  font-weight: 500;
-  margin-top: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.case-link:hover {
-  text-decoration: underline;
-}
 .section-intro {
   text-align: center;
   color: #555;
@@ -1042,21 +851,6 @@ footer .tagline {
 .project-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-}
-
-.project-card img {
-  width: 100%;
-  border-radius: 8px;
-  object-fit: cover;
-  aspect-ratio: 16 / 9;
-}
-
-.project-card h4 {
-  margin-top: 1rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-transform: none;
-  transition: color 0.3s ease;
 }
 
 .project-card:hover h4 {
@@ -1096,27 +890,16 @@ footer .tagline {
   border-radius: 8px;
   padding: 10px; /* adds breathing room for tall images */
 }
+
 .project-card h4 {
   max-width: 90%;
   margin: 1rem auto 0.5rem;
   text-align: center;
   line-height: 1.3;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 600;
-}
-
-/* --- Header setup --- */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: calc(1rem + env(safe-area-inset-top)) 1.5rem;
-  height: auto; /* don't force a fixed height */
-  box-sizing: border-box;
+  text-transform: none;
+  transition: color 0.3s ease;
 }
 
 /* --- Fix hero overlap on iPhone 16 and other small screens --- */
@@ -1151,7 +934,6 @@ header {
     padding-top: calc(10rem + env(safe-area-inset-top));
   }
 }
-
 @media (max-width: 480px) {
   .projects {
     grid-template-columns: 1fr;
