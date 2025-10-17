@@ -173,6 +173,11 @@ section h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2.5rem;
+
+  justify-items: center; /* centers each card horizontally */
+  max-width: 1200px;
+  margin: 0 auto; /* centers entire grid */
+  box-sizing: border-box;
 }
 
 .project-card {
@@ -1144,5 +1149,18 @@ header {
 @media (max-width: 364px) {
   .hero {
     padding-top: calc(10rem + env(safe-area-inset-top));
+  }
+}
+
+@media (max-width: 480px) {
+  .projects {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 0 1rem;
+    gap: 2rem;
+  }
+
+  .project-card {
+    max-width: 90%;
   }
 }
