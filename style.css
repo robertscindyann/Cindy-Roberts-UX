@@ -42,6 +42,7 @@ header {
   height: auto;
   box-sizing: border-box;
 }
+
 header h1 {
   font-size: 1.4rem;
   color: var(--accent);
@@ -49,6 +50,7 @@ header h1 {
   font-weight: 600;
   text-decoration: none;
 }
+
 /* Navigation */
 nav a {
   margin-left: 1.5rem;
@@ -62,7 +64,7 @@ nav a:hover {
   color: var(--accent);
 }
 
-/* Hamburger icon hidden on desktop */
+/* Hamburger Icon */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -80,18 +82,18 @@ nav a:hover {
   border-radius: 2px;
   transition: all 0.3s ease;
 }
-/* Hamburger active state */
+
+/* Hamburger Active State */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
-
 .hamburger.active span:nth-child(2) {
-  opacity: 0; /* hide middle bar */
+  opacity: 0;
 }
-
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
+
 /* ============================================================
    Hero Section
 ============================================================ */
@@ -122,6 +124,7 @@ nav a:hover {
   color: #444;
   line-height: 1.8;
 }
+
 /* Button */
 .btn {
   padding: 0.8rem 1.5rem;
@@ -139,13 +142,13 @@ nav a:hover {
   color: white;
 }
 
+/* ============================================================
+   Layout & Sections
+============================================================ */
 main {
-  min-height: calc(100vh - 100px); /* 100px = footer height */
+  min-height: calc(100vh - 100px);
 }
 
-/* ============================================================
-   Section Layouts
-============================================================ */
 section {
   padding: 4rem 2rem;
   max-width: 1100px;
@@ -158,6 +161,7 @@ section h3 {
   margin-bottom: 1.5rem;
   text-align: center;
 }
+
 .about,
 .contact,
 .why-me {
@@ -178,7 +182,7 @@ section h3 {
 }
 
 /* ============================================================
-   Projects Grid
+   Projects Grid & Featured Work
 ============================================================ */
 #projects {
   background: var(--neutral);
@@ -189,10 +193,9 @@ section h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2.5rem;
-
-  justify-items: center; /* centers each card horizontally */
+  justify-items: center;
   max-width: 1200px;
-  margin: 0 auto; /* centers entire grid */
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
@@ -218,6 +221,7 @@ section h3 {
 .project-card:hover h4 {
   color: var(--accent);
 }
+
 .project-card img {
   width: 100%;
   height: 320px;
@@ -256,15 +260,8 @@ section h3 {
 .case-link:hover {
   text-decoration: underline;
 }
-/* Section Divider */
-.section-divider {
-  width: 60px;
-  margin: 4rem auto;
-  border: 1px solid var(--accent);
-  opacity: 0.3;
-}
 
-/* Featured Work */
+/* Featured Work Intro & Divider */
 .section-intro {
   text-align: center;
   color: #555;
@@ -274,16 +271,25 @@ section h3 {
   line-height: 1.6;
 }
 
+.section-divider {
+  width: 60px;
+  margin: 4rem auto;
+  border: 1px solid var(--accent);
+  opacity: 0.3;
+}
+
 /* ============================================================
-   Unordered List amd Back-Link Styles
+   Lists & Back-Link
 ============================================================ */
 ul {
   padding-left: 1.25rem;
   margin-bottom: 2rem;
 }
+
 ul li {
   margin-bottom: 0.5rem;
 }
+
 .back-link {
   display: inline-block;
   margin-bottom: 1.5rem;
@@ -292,11 +298,13 @@ ul li {
   font-weight: 500;
   transition: color 0.3s;
 }
+
 .back-link:hover {
   color: var(--dark);
 }
+
 /* ============================================================
-   Case Studies (Wildcats, Diabetes, etc.)
+   Case Studies (General)
 ============================================================ */
 .project-case {
   max-width: 1100px;
@@ -326,14 +334,22 @@ ul li {
   color: #444;
 }
 
+.project-meta {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+/* Case Study Image Grids */
 .project-images {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 12px;
+  margin-bottom: 3rem;
 }
 
 .project-images img {
@@ -341,11 +357,24 @@ ul li {
   border-radius: 8px;
   object-fit: contain;
 }
-.project-meta {
-  font-size: 0.85rem;
-  color: #777;
-  margin-top: 0.5rem;
+
+.project-images figure {
+  flex: 1 1 200px;
+  max-width: 250px;
+  text-align: center;
 }
+
+.process-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.process-images figure {
+  max-width: 400px;
+}
+
 .research-insights {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -366,15 +395,9 @@ ul li {
 .insight-card:hover {
   transform: translateY(-5px);
 }
-.process-images,
-.project-images {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
+
 /* ============================================================
-   Wildcats Page Specific
+   Wildcats Page
 ============================================================ */
 .wildcats-page .project-images,
 .wildcats-page .sketch-gallery {
@@ -382,6 +405,12 @@ ul li {
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+}
+
+.wildcats-page .sketch-gallery figure,
+.wildcats-page .project-images figure {
+  flex: 1 1 45%;
+  text-align: center;
 }
 
 .wildcats-page .solution-gallery-collage {
@@ -414,40 +443,21 @@ ul li {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-.wildcats-page .solution-gallery-collage img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
-.wildcats-page .solution-gallery-collage .backpack-tile img {
-  height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-}
-.wildcats-page .sketch-gallery figure,
-.wildcats-page .project-images figure {
-  flex: 1 1 45%;
-  text-align: center;
-}
-/* --- Layout placement --- */
+/* Layout placement */
 .wildcats-page .solution-gallery-collage .logo-tile {
   grid-column: 1;
   grid-row: 1;
 }
-
 .wildcats-page .solution-gallery-collage .group-tile {
   grid-column: 1;
   grid-row: 2;
 }
-
 .wildcats-page .solution-gallery-collage .backpack-tile {
   grid-column: 2;
   grid-row: 1 / span 2;
 }
 
-/* --- Image scaling and proportions --- */
+/* Image scaling */
 .wildcats-page .solution-gallery-collage img {
   width: 100%;
   height: auto;
@@ -456,6 +466,13 @@ ul li {
   display: block;
   margin: 0 auto;
 }
+
+.wildcats-page .solution-gallery-collage .backpack-tile img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
 /* ============================================================
    Contact Section
 ============================================================ */
@@ -477,13 +494,6 @@ ul li {
   font-weight: 600;
 }
 
-.contact p {
-  max-width: 650px;
-  margin: 0 auto 1.2rem;
-  color: #444;
-  line-height: 1.7;
-}
-
 .contact-links a {
   color: var(--accent);
   text-decoration: none;
@@ -494,12 +504,29 @@ ul li {
   color: var(--dark);
   text-decoration: underline;
 }
+
 .closing-note {
   font-style: italic;
   color: #666;
   margin-top: 2rem;
   font-size: 0.95rem;
 }
+
+/* ============================================================
+   Figures & Captions
+============================================================ */
+figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: #555;
+}
+
 /* ============================================================
    Footer
 ============================================================ */
@@ -527,18 +554,7 @@ footer .tagline {
   color: #555;
   margin-top: 0.5rem;
 }
-/* Image inside of Figure */
-figure img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
 
-figcaption {
-  font-size: 0.9rem;
-  color: #555;
-}
 /* ============================================================
    Media Queries
 ============================================================ */
@@ -590,6 +606,7 @@ figcaption {
     z-index: 400;
   }
 }
+
 @media (max-width: 480px) {
   .projects {
     grid-template-columns: 1fr;
@@ -608,6 +625,7 @@ figcaption {
     padding-top: calc(9.5rem + env(safe-area-inset-top));
     min-height: 110vh;
   }
+
   .hero h2 {
     margin-top: 1rem;
   }
@@ -624,27 +642,7 @@ figcaption {
     grid-template-columns: 1fr 1fr;
   }
 }
+
 /* ============================================================
    End of Organized Code
 ============================================================ */
-/* Buggy changes user flow image size */
-.process-images figure {
-  max-width: 400px;
-}
-.project-images figure {
-  flex: 1 1 200px;
-  max-width: 250px;
-  text-align: center;
-}
-
-/* Buggy changes design process image sections */
-.project-images {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 12px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
