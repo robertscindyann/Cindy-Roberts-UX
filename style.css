@@ -1,3 +1,6 @@
+/* ============================================================
+   Root Variables & Reset
+============================================================ */
 :root {
   --blush: #eacfd3;
   --neutral: #fafafa;
@@ -11,10 +14,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--font);
 }
 
-/*Body*/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--neutral);
   color: var(--dark);
@@ -22,7 +27,9 @@ body {
   font-family: var(--font-sans);
 }
 
-/* --- Header setup --- */
+/* ============================================================
+   Header & Navigation
+============================================================ */
 header {
   position: sticky;
   top: 0;
@@ -32,11 +39,30 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: calc(1rem + env(safe-area-inset-top)) 1.5rem;
-  height: auto; /* don't force a fixed height */
+  height: auto;
   box-sizing: border-box;
 }
+header h1 {
+  font-size: 1.4rem;
+  color: var(--accent);
+  font-family: var(--font-serif);
+  font-weight: 600;
+  text-decoration: none;
+}
+/* Navigation */
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 400;
+  transition: color 0.3s;
+}
 
-/* Hamburger icon */
+nav a:hover {
+  color: var(--accent);
+}
+
+/* Hamburger icon hidden on desktop */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -66,36 +92,17 @@ header {
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
-header h1 {
-  font-size: 1.4rem;
-  color: var(--accent);
-  font-family: var(--font-serif);
-  font-weight: 600;
-  text-decoration: none;
-}
-/* Navigation */
-nav a {
-  margin-left: 1.5rem;
-  text-decoration: none;
-  color: var(--dark);
-  font-weight: 400;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: var(--accent);
-}
-
-main {
-  min-height: calc(100vh - 100px); /* 100px = footer height */
-}
-/* Hero Section */
+/* ============================================================
+   Hero Section
+============================================================ */
 .hero {
+  padding-top: calc(8rem + env(safe-area-inset-top));
+  height: auto;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 70vh;
   text-align: center;
   background: linear-gradient(180deg, var(--blush) 0%, white 100%);
   padding: 2rem;
@@ -115,7 +122,6 @@ main {
   color: #444;
   line-height: 1.8;
 }
-
 /* Button */
 .btn {
   padding: 0.8rem 1.5rem;
@@ -133,7 +139,13 @@ main {
   color: white;
 }
 
-/* Sections */
+main {
+  min-height: calc(100vh - 100px); /* 100px = footer height */
+}
+
+/* ============================================================
+   Section Layouts
+============================================================ */
 section {
   padding: 4rem 2rem;
   max-width: 1100px;
@@ -146,31 +158,33 @@ section h3 {
   margin-bottom: 1.5rem;
   text-align: center;
 }
-
-.project-card a h4 {
-  margin: 0.8rem 0; /* 0.8rem space above and below */
-}
-
 .about,
-.contact {
+.contact,
+.why-me {
+  text-align: center;
   background: var(--neutral);
   padding: 5rem 2rem;
-  text-align: center;
-  max-width: none; /* full width */
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .about p,
-.contact p {
+.contact p,
+.why-me p {
   max-width: 700px;
   margin: 0 auto 1.5rem;
+  color: #444;
+  line-height: 1.8;
 }
 
+/* ============================================================
+   Projects Grid
+============================================================ */
 #projects {
   background: var(--neutral);
   padding: 5rem 2rem;
 }
 
-/* Projects Grid */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -187,89 +201,103 @@ section h3 {
   border-radius: 12px;
   padding: 1.5rem;
   border: 1px solid #eee;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  cursor: pointer;
   text-decoration: none;
   color: inherit;
 }
 
 .project-card:hover {
-  transform: scale(1.03);
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.08));
-}
-.project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
 
+.project-card:hover h4 {
+  color: var(--accent);
+}
 .project-card img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px 8px 0 0;
-  background: #fdfdfd;
-}
-/* Special styles for logo/book mockups */
-.project-card.logo img,
-.project-card.book img {
+  height: 320px;
   object-fit: contain;
-  padding: 20px;
-  height: 200px;
-}
-/* Project Case Studies */
-.project-case {
-  background: white;
-  border-radius: 12px;
-  padding: 2.5rem;
-  border: 1px solid #eee;
-  margin-bottom: 5rem;
-}
-
-.project-case img {
-  width: 100%;
-  max-width: 800px;
-  margin-bottom: 2rem;
+  background: #fafafa;
   border-radius: 8px;
+  padding: 10px;
 }
 
-.project-case ul {
-  margin-left: 1.5rem;
+.project-card h4 {
+  max-width: 90%;
+  margin: 1rem auto 0.5rem;
+  text-align: center;
+  line-height: 1.3;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-top: 0.8rem;
+  line-height: 1.6;
+}
+
+.case-link {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.case-link:hover {
+  text-decoration: underline;
+}
+/* Section Divider */
+.section-divider {
+  width: 60px;
+  margin: 4rem auto;
+  border: 1px solid var(--accent);
+  opacity: 0.3;
+}
+
+/* Featured Work */
+.section-intro {
+  text-align: center;
+  color: #555;
+  font-size: 1.05rem;
+  margin: 0 auto 3rem;
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   Unordered List amd Back-Link Styles
+============================================================ */
+ul {
+  padding-left: 1.25rem;
   margin-bottom: 2rem;
 }
-
-/* Back link */
+ul li {
+  margin-bottom: 0.5rem;
+}
 .back-link {
   display: inline-block;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   color: var(--accent);
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s;
 }
-
-.project-case img {
-  width: 100%;
-  max-width: 600px;
-  margin-bottom: 2rem;
-  border-radius: 8px;
+.back-link:hover {
+  color: var(--dark);
 }
-
-/* Animations */
-[data-animate] {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease-out;
-}
-
-[data-animate].visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Wildcats dance team styles */
+/* ============================================================
+   Case Studies (Wildcats, Diabetes, etc.)
+============================================================ */
 .project-case {
   max-width: 1100px;
   margin: 4rem auto;
@@ -284,71 +312,39 @@ section h3 {
   font-size: 2.2rem;
   margin-bottom: 1.5rem;
 }
+
+.project-case h3 {
+  margin-top: 3rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
 .project-case p {
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
   color: #444;
 }
-.project-case h3 {
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  font-size: 1.6rem;
-  font-weight: 600;
-}
 
 .project-images {
-  display: grid;
-  grid-template-columns: 1fr; /* single column on mobile */
-  gap: 1.5rem;
-  margin: 2rem 0;
-  /* background: #fafafa; */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
 }
 
 .project-images img {
   width: 100%;
-  height: auto;
-  /* max-height: 400px; */
+  border-radius: 8px;
   object-fit: contain;
-  border-radius: 12px;
-  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); */
-  /* background: #fafafa; */
-  /* padding: 10px; */
 }
-
-#wildcats-logo-variation {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-/* Inite sneaker ad styles */
-.design-assets {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  /* gap: 30px; */
-}
-.design-assets img {
-  max-width: 300px; /* keeps them smaller than full mockups */
-  object-fit: contain;
-  margin-bottom: 0;
-}
-
-figcaption {
+.project-meta {
   font-size: 0.85rem;
   color: #777;
-}
-
-/* Diabetes Website styles */
-.process-images figure {
-  max-width: 400px; /* smaller width for process steps */
-}
-/* Space between main sections */
-.project-case h3 {
-  margin-top: 4rem; /* creates breathing room before section titles */
-  margin-bottom: 1.5rem;
-  font-size: 1.5rem;
-  font-weight: 600;
+  margin-top: 0.5rem;
 }
 .research-insights {
   display: grid;
@@ -370,179 +366,16 @@ figcaption {
 .insight-card:hover {
   transform: translateY(-5px);
 }
-.insight-card h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.8rem;
-}
-.insight-card p {
-  font-size: 0.95rem;
-  color: #444;
-}
-
-/* Grouped image sections */
 .process-images,
 .project-images {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem; /* space between images */
-  margin-bottom: 3rem; /* separation from next section */
-}
-
-/* Background blocks for contrast */
-.process-images {
-  background-color: #fafafa; /* light gray */
-  padding: 2rem;
-  border-radius: 12px;
-}
-.project-images {
-  background-color: #fff; /* keeps final product clean */
-  padding: 2rem;
-  border-radius: 12px;
-}
-
-/* Figures and captions */
-figure {
-  text-align: center;
-  margin: 0;
-}
-
-figure img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
-figcaption {
-  margin-top: 0.75rem;
-  font-size: 0.9rem;
-  color: #555;
-}
-
-ul {
-  padding-left: 1.25rem;
-  margin-bottom: 2rem;
-}
-
-ul li {
-  margin-bottom: 0.5rem;
-}
-
-.back-link {
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.back-link:hover {
-  color: var(--dark);
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: var(--dark);
-  color: white;
-  margin-top: 3rem;
-  font-size: 0.9rem;
-}
-
-/* Media Queries */
-@media (min-width: 768px) {
-  .project-images {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .luna-fairy-assets {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 1.5rem;
-  }
-}
-/* Hamburger icon hidden on desktop */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 25px;
-  height: 20px;
-  cursor: pointer;
-}
-
-.hamburger span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background: var(--dark);
-  border-radius: 2px;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex; /* show hamburger */
-  }
-
-  nav {
-    display: flex;
-    flex-direction: column;
-    position: fixed; /* overlay on screen */
-    top: 0;
-    left: 0;
-    width: 100%;
-
-    background: white;
-    margin-top: 70px; /* leave space for header */
-    align-items: center;
-    justify-content: start;
-    transform: translateX(100%); /* hide offscreen */
-    z-index: 200;
-    overflow-y: auto;
-    border-top: 1px solid #eee;
-  }
-
-  nav.active {
-    transform: translateX(0); /* slide in */
-  }
-
-  nav a {
-    width: 100%; /* touch-friendly width */
-    text-align: center;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid #eee; /* subtle separation */
-  }
-
-  header h1 {
-    z-index: 400; /* make sure it stays above nav */
-  }
-  /* .process-images,
-  .project-images {
-    display: grid;
-    gap: 2rem;
-    margin-bottom: 3rem;
-  } */
-}
-.project-images {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 2rem;
+  margin-bottom: 3rem;
 }
-
-.project-images figure {
-  flex: 1 1 200px;
-  max-width: 250px;
-  text-align: center;
-}
-
-.project-images img {
-  width: 100%;
-  border-radius: 8px;
-}
-/* Wildcats Page - specific layout for side-by-side images */
+/* ============================================================
+   Wildcats Page Specific
+============================================================ */
 .wildcats-page .project-images,
 .wildcats-page .sketch-gallery {
   display: flex;
@@ -551,90 +384,10 @@ footer {
   gap: 2rem;
 }
 
-.wildcats-page .project-images img,
-.wildcats-page .sketch-gallery img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 8px;
-  object-fit: contain;
-}
-
-.wildcats-page .sketch-gallery figure,
-.wildcats-page .project-images figure {
-  flex: 1 1 45%;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .wildcats-page .project-images,
-  .wildcats-page .sketch-gallery {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-.wildcats-page .solution-gallery-collage figure:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Wildcats Page – Clean 2-Column Equal Grid for Solution Section */
 .wildcats-page .solution-gallery-collage {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-top: 2.5rem;
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 16px;
-}
-
-/* Card styling for each image tile */
-.wildcats-page .solution-gallery-collage figure {
-  background: #fafafa;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-  padding: 1rem;
-}
-
-.wildcats-page .solution-gallery-collage figure:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Images maintain same width, centered, not cropped */
-.wildcats-page .solution-gallery-collage img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-  border-radius: 8px;
-}
-
-/* Captions styling */
-.wildcats-page .solution-gallery-collage figcaption {
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: 0.75rem;
-}
-
-/* Responsive behavior */
-@media (max-width: 900px) {
-  .wildcats-page .solution-gallery-collage {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-}
-/* Wildcats Page – 2-Column Volume Grid for Solution Section */
-.wildcats-page .solution-gallery-collage {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* two equal columns */
-  grid-template-rows: auto auto; /* two stacked rows */
+  grid-template-rows: auto auto;
   gap: 1.5rem;
   margin-top: 2.5rem;
   background: #fff;
@@ -643,6 +396,41 @@ footer {
   align-items: stretch;
 }
 
+.wildcats-page .solution-gallery-collage figure {
+  background: #fafafa;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wildcats-page .solution-gallery-collage figure:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.wildcats-page .solution-gallery-collage img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.wildcats-page .solution-gallery-collage .backpack-tile img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.wildcats-page .sketch-gallery figure,
+.wildcats-page .project-images figure {
+  flex: 1 1 45%;
+  text-align: center;
+}
 /* --- Layout placement --- */
 .wildcats-page .solution-gallery-collage .logo-tile {
   grid-column: 1;
@@ -656,26 +444,7 @@ footer {
 
 .wildcats-page .solution-gallery-collage .backpack-tile {
   grid-column: 2;
-  grid-row: 1 / span 2; /* spans both rows vertically */
-}
-
-/* --- Shared styling for all tiles --- */
-.wildcats-page .solution-gallery-collage figure {
-  background: #fafafa;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.wildcats-page .solution-gallery-collage figure:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  grid-row: 1 / span 2;
 }
 
 /* --- Image scaling and proportions --- */
@@ -687,70 +456,9 @@ footer {
   display: block;
   margin: 0 auto;
 }
-
-.wildcats-page .solution-gallery-collage .backpack-tile img {
-  height: 100%;
-  object-fit: cover; /* fills the tall right column neatly */
-  border-radius: 12px;
-}
-
-/* --- Caption styling --- */
-.wildcats-page .solution-gallery-collage figcaption {
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: 0.75rem;
-}
-
-/* --- Responsive layout --- */
-@media (max-width: 900px) {
-  .wildcats-page .solution-gallery-collage {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-
-  .wildcats-page .solution-gallery-collage .backpack-tile {
-    grid-column: auto;
-    grid-row: auto;
-  }
-}
-footer {
-  background: var(--blush);
-  color: var(--dark);
-  padding: 2rem 1rem;
-  text-align: center;
-  font-family: var(--font-sans);
-  border-top: 2px solid var(--accent);
-}
-
-footer a {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-footer .tagline {
-  font-size: 0.95rem;
-  color: #555;
-  margin-top: 0.5rem;
-}
-.why-me {
-  background: var(--neutral);
-  padding: 5rem 2rem;
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.why-me p {
-  max-width: 700px;
-  margin: 0 auto 1.5rem;
-  line-height: 1.8;
-  color: #444;
-}
+/* ============================================================
+   Contact Section
+============================================================ */
 .contact {
   background: white;
   padding: 5rem 2rem;
@@ -792,146 +500,94 @@ footer .tagline {
   margin-top: 2rem;
   font-size: 0.95rem;
 }
-.section-intro {
+/* ============================================================
+   Footer
+============================================================ */
+footer {
+  background: var(--blush);
+  color: var(--dark);
+  padding: 2rem 1rem;
   text-align: center;
-  color: #555;
-  font-size: 1.05rem;
-  margin: 0 auto 3rem;
-  max-width: 650px;
-  line-height: 1.6;
-}
-.project-meta {
-  font-size: 0.85rem;
-  color: #777;
-  margin-top: 0.5rem;
-}
-.project-card img {
-  border-radius: 8px;
-  object-fit: cover;
-  aspect-ratio: 16 / 9;
-}
-.section-divider {
-  width: 60px;
-  margin: 4rem auto;
-  border: 1px solid var(--accent);
-  opacity: 0.3;
-}
-.section-intro {
-  text-align: center;
-  color: #555;
-  font-size: 1.05rem;
-  margin: 0 auto 3rem;
-  max-width: 650px;
-  line-height: 1.6;
+  font-family: var(--font-sans);
+  border-top: 2px solid var(--accent);
 }
 
-.section-intro {
-  text-align: center;
-  color: #555;
-  font-size: 1.05rem;
-  margin: 0 auto 3rem;
-  max-width: 650px;
-  line-height: 1.6;
-}
-
-.project-card {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  border: 1px solid #eee;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+footer a {
+  color: var(--accent);
   text-decoration: none;
-  color: inherit;
-}
-
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-}
-
-.project-card:hover h4 {
-  color: var(--accent);
-}
-
-.project-card p {
-  font-size: 0.95rem;
-  color: #444;
-  margin-top: 0.8rem;
-  line-height: 1.6;
-}
-
-.project-meta {
-  font-size: 0.85rem;
-  color: #777;
-  margin-top: 0.5rem;
-}
-
-.case-link {
-  color: var(--accent);
-  font-size: 0.9rem;
   font-weight: 500;
-  margin-top: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
-.case-link:hover {
+footer a:hover {
   text-decoration: underline;
 }
-.project-card img {
+
+footer .tagline {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+/* Image inside of Figure */
+figure img {
   width: 100%;
-  max-height: 220px;
-  object-fit: contain; /* instead of cover */
-  background: #fafafa;
+  height: auto;
   border-radius: 8px;
-  padding: 10px; /* adds breathing room for tall images */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-.project-card h4 {
-  max-width: 90%;
-  margin: 1rem auto 0.5rem;
-  text-align: center;
-  line-height: 1.3;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-transform: none;
-  transition: color 0.3s ease;
+figcaption {
+  font-size: 0.9rem;
+  color: #555;
 }
-
-/* --- Fix hero overlap on iPhone 16 and other small screens --- */
-.hero {
-  padding-top: calc(
-    8rem + env(safe-area-inset-top)
-  ); /* creates space below sticky header */
-  height: auto; /* prevents hero from being constrained too short */
-  min-height: 100vh; /* fills full height for clean layout */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-@media (max-width: 428px) {
-  .hero {
-    padding-top: calc(
-      9.5rem + env(safe-area-inset-top)
-    ); /* extra space for taller header/nav stack */
-    min-height: 110vh;
+/* ============================================================
+   Media Queries
+============================================================ */
+@media (max-width: 900px) {
+  .wildcats-page .solution-gallery-collage {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
-
-  .hero h2 {
-    margin-top: 1rem;
+  .wildcats-page .solution-gallery-collage .backpack-tile {
+    grid-column: auto;
+    grid-row: auto;
   }
 }
 
-@media (max-width: 364px) {
-  .hero {
-    padding-top: calc(10rem + env(safe-area-inset-top));
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    margin-top: 70px;
+    align-items: center;
+    justify-content: start;
+    transform: translateX(100%);
+    z-index: 200;
+    overflow-y: auto;
+    border-top: 1px solid #eee;
+  }
+
+  nav.active {
+    transform: translateX(0);
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  header h1 {
+    z-index: 400;
   }
 }
 @media (max-width: 480px) {
@@ -945,4 +601,50 @@ footer .tagline {
   .project-card {
     max-width: 90%;
   }
+}
+
+@media (max-width: 428px) {
+  .hero {
+    padding-top: calc(9.5rem + env(safe-area-inset-top));
+    min-height: 110vh;
+  }
+  .hero h2 {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 364px) {
+  .hero {
+    padding-top: calc(10rem + env(safe-area-inset-top));
+  }
+}
+
+@media (min-width: 768px) {
+  .project-images {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* ============================================================
+   End of Organized Code
+============================================================ */
+/* Buggy changes user flow image size */
+.process-images figure {
+  max-width: 400px;
+}
+.project-images figure {
+  flex: 1 1 200px;
+  max-width: 250px;
+  text-align: center;
+}
+
+/* Buggy changes design process image sections */
+.project-images {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
 }
