@@ -38,8 +38,7 @@
         This case study showcases the design of a <strong>mobile banking app onboarding experience</strong> for Haven
         Financial — a conceptual brand emphasizing trust, simplicity, and clarity. The goal was to create an intuitive,
         step-by-step flow that helps users <strong>open and fund a new checking account</strong> while feeling secure
-        and
-        informed.
+        and informed.
       </p>
 
       <!-- The Problem -->
@@ -47,7 +46,8 @@
       <p class="callout">
         Many users abandon banking apps due to confusing verification steps and unclear progress.
         The challenge was to design a <strong>streamlined, confidence-building flow</strong> that made setup easy,
-        secure, and transparent.
+        secure, and transparent. This assumption was reinforced by secondary research and app review analysis,
+        which revealed frustration around unclear guidance and lack of trust in digital banking.
       </p>
       <ul>
         <li>Users often feel anxious about sharing sensitive information online.</li>
@@ -55,11 +55,89 @@
         <li>Trust is crucial in financial services, especially for first-time users.</li>
       </ul>
 
-      <!-- Research & Goals -->
-      <h3>Research & Design Goals</h3>
+      <!-- Research Validation & Design Goals -->
+      <h3>Research Validation & Design Goals</h3>
+      <p>
+        As a conceptual UX project, this work was informed by <strong>secondary research</strong> and competitive
+        analysis of leading personal finance apps such as Mint, YNAB, and Empower. By analyzing app store reviews, UX
+        articles, and discussions in personal finance communities, I identified recurring patterns around user trust,
+        complexity, and motivation.
+      </p>
+
+      <h4>Key Insights</h4>
       <ul>
-        <li><strong>Trust-building:</strong> Use color, tone, and microcopy to reassure users through secure steps.
-        </li>
+        <li>Users feel <strong>anxious sharing financial data</strong> when the app lacks transparent communication or
+          visual reassurance.</li>
+        <li>Excessive form fields and unclear verification steps <strong>increase friction and abandonment
+            rates</strong>.</li>
+        <li>Visual simplicity and clear progress indicators <strong>boost perceived trust and confidence</strong>.</li>
+      </ul>
+
+      <!-- Competitive Analysis Visual -->
+      <section class="competitive-analysis">
+        <h4>Competitive Analysis</h4>
+        <p>
+          To inform Haven’s onboarding strategy, I compared leading finance apps—Mint, YNAB, and Empower—across key UX
+          criteria related to trust, clarity, and effort.
+        </p>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th scope="col">UX Criteria</th>
+              <th scope="col">Mint</th>
+              <th scope="col">YNAB</th>
+              <th scope="col">Empower</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Onboarding length</td>
+              <td>6 screens</td>
+              <td>4 screens</td>
+              <td>5 screens</td>
+            </tr>
+            <tr>
+              <td>Visual feedback</td>
+              <td>Minimal</td>
+              <td>Moderate</td>
+              <td>Strong</td>
+            </tr>
+            <tr>
+              <td>Transparency of data use</td>
+              <td>Low</td>
+              <td>High</td>
+              <td>Medium</td>
+            </tr>
+            <tr>
+              <td>Tone of microcopy</td>
+              <td>Technical</td>
+              <td>Friendly</td>
+              <td>Neutral</td>
+            </tr>
+            <tr>
+              <td>Emotional tone</td>
+              <td>Busy</td>
+              <td>Calm</td>
+              <td>Trustworthy</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        <p class="table-summary">
+          This analysis revealed that apps like YNAB achieved higher trust through transparency and calm design,
+          while Mint’s longer onboarding and technical tone created friction. These findings guided Haven’s focus
+          on simplicity, reassurance, and visual calm.
+        </p>
+        <figcaption>
+          Competitive analysis of onboarding patterns across top financial apps (Mint, YNAB, Empower)
+        </figcaption>
+      </section>
+
+      <h4>Design Goals</h4>
+      <ul>
+        <li><strong>Trust-building:</strong> Use color, tone, and microcopy to reassure users through secure steps.</li>
         <li><strong>Clarity:</strong> Make each step purpose-driven and visually distinct.</li>
         <li><strong>Progress visibility:</strong> Help users see where they are in the process.</li>
         <li><strong>Efficiency:</strong> Minimize input fields and leverage smart defaults.</li>
@@ -75,12 +153,12 @@
 
       <div class="process-images">
         <figure>
-          <img src="image/haven-userflow.png" alt="User flow diagram for Haven Financial app">
+          <img src="image/haven-userflow.png"
+            alt="Diagram showing Haven Financial's step-by-step onboarding flow from welcome to success">
           <figcaption>
             Haven Financial onboarding user flow<br>
             <small>Welcome → Account Setup → Verification → Funding → Success</small>
           </figcaption>
-
         </figure>
       </div>
 
@@ -110,27 +188,22 @@
           <img src="image/haven-welcome.jpg" alt="Welcome screen for Haven Financial app">
           <figcaption>Welcome Screen — establishes tone and brand confidence</figcaption>
         </figure>
-
         <figure>
           <img src="image/haven-open-account.jpg" alt="Open an account screen">
           <figcaption>Account Selection — clear options using radio buttons and dropdown menus</figcaption>
         </figure>
-
         <figure>
           <img src="image/haven-checking.jpg" alt="Checking account setup screen">
           <figcaption>Checking Account Setup — user details simplified for easy input</figcaption>
         </figure>
-
         <figure>
           <img src="image/haven-verify-identity.jpg" alt="Verify identity screen">
           <figcaption>Identity Verification — secure process with clear guidance</figcaption>
         </figure>
-
         <figure>
           <img src="image/haven-fund-account.jpg" alt="Fund account screen">
           <figcaption>Funding Step — confirm deposit and review summary before submission</figcaption>
         </figure>
-
         <figure>
           <img src="image/haven-success.jpg" alt="Success confirmation screen">
           <figcaption>Success Screen — positive reinforcement and next-step CTAs</figcaption>
@@ -145,32 +218,22 @@
       </p>
 
       <ul>
-        <li><strong>Guided Simplicity:</strong> Each screen focused on one clear action at a time, preventing
-          cognitive
+        <li><strong>Guided Simplicity:</strong> Each screen focused on one clear action at a time, preventing cognitive
           overload and allowing users to move forward confidently.</li>
-
         <li><strong>Trust Through Visual Language:</strong> The navy and teal palette provided calm and credibility,
           while white space and soft gradients created a professional yet welcoming interface.</li>
-
-        <li><strong>Progress & Reassurance:</strong> A three-step progress indicator — <em>“Step 1 of 3: Personal
-            Info,”
+        <li><strong>Progress & Reassurance:</strong> A three-step progress indicator — <em>“Step 1 of 3: Personal Info,”
             “Step 2 of 3: Verify,” and “Step 3 of 3: Funding”</em> — reinforced momentum and transparency.</li>
-
-        <li><strong>Microcopy & Tone:</strong> Plain, human language such as “We’re verifying your information
-          securely”
+        <li><strong>Microcopy & Tone:</strong> Plain, human language such as “We’re verifying your information securely”
           helped users feel safe without overwhelming them with compliance terms.</li>
-
         <li><strong>Inline Feedback:</strong> Real-time form validation and green success states provided immediate
           reassurance that details were entered correctly.</li>
-
         <li><strong>Completion Reinforcement:</strong> The success screen featured a checkmark icon, the heading
           <em>“Your checking account has been funded!”</em>, body text <em>“You can now start using your new Haven
             Checking account.”</em>, and a single <em>Done</em> button — giving users closure and a sense of
           achievement.
         </li>
       </ul>
-
-
 
       <!-- Impact -->
       <h3>Impact</h3>
@@ -180,30 +243,31 @@
         <li><strong>Established scalability</strong> for future product extensions like loans or savings.</li>
       </ul>
 
+      <!-- Research Limitations -->
+      <h3>Research Limitations & Next Steps</h3>
+
+      <p>
+        Because Haven Financial was a conceptual project, I used <strong>assumptive and secondary research</strong>
+        rather than direct user interviews. Future iterations would include <strong>usability testing</strong> and
+        <strong>moderated interviews</strong> to validate clarity, trust signals, and task completion rates.
+      </p>
 
       <!-- Reflection -->
       <h3>Reflection & Next Steps</h3>
       <p>
-        This project helped me strengthen my ability to design for trust — balancing financial compliance with
-        emotional reassurance.
+        This project helped me strengthen my ability to design for trust — balancing financial compliance with emotional
+        reassurance.
       </p>
       <ul>
         <li><strong>Next Iteration:</strong> Expand usability testing to validate clarity and error handling.</li>
-        <li><strong>Future Direction:</strong> Extend Haven into a personalized dashboard experience integrating
-          savings and credit tracking.</li>
+        <li><strong>Future Direction:</strong> Extend Haven into a personalized dashboard experience integrating savings
+          and credit tracking.</li>
       </ul>
-
-
-
-      <!-- Prototype Link -->
-      <!-- <a href="https://www.figma.com/proto/YOUR-FIGMA-LINK-HERE" target="_blank" class="btn">View Figma Prototype</a> -->
     </main>
 
     <footer>
-
       <p><strong>Cindy-Ann Roberts</strong> — UX Designer</p>
       <p class="footer-tagline">Designing thoughtful, human-centered experiences.</p>
-
       <p class="footer-copy">© 2025</p>
     </footer>
 
@@ -211,9 +275,7 @@
       const elements = document.querySelectorAll('[data-animate]');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
+          if (entry.isIntersecting) entry.target.classList.add('visible');
         });
       }, { threshold: 0.1 });
       elements.forEach(el => observer.observe(el));

@@ -643,6 +643,91 @@ footer .tagline {
   }
 }
 
+.research-section {
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 3rem 0;
+}
+.process-images figure img {
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.competitive-analysis {
+  margin: 3rem 0;
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.competitive-analysis h4 {
+  margin-bottom: 0.75rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+}
+
+.competitive-analysis p {
+  margin-bottom: 1.25rem;
+  color: #444;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  /* text-align: center; */
+}
+
+.comparison-table th {
+  background: #1b2b4d; /* Haven navy */
+  color: #fff;
+  padding: 0.75rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+.comparison-table td {
+  padding: 0.75rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+.comparison-table tr:nth-child(even) {
+  background: #f5f7f9;
+}
+
+.comparison-table tr:hover {
+  background: #eef5f4;
+}
+.table-summary {
+  margin-top: 1rem;
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  /* text-align: center; */
+  /* max-width: 650px;
+  margin-left: auto;
+  margin-right: auto; */
+}
+
+.competitive-analysis figcaption {
+  font-size: 0.85rem;
+  /* text-align: center; */
+  margin-top: 1rem;
+  color: #666;
+}
+
+/* Responsive tweak for narrow screens */
+@media (max-width: 600px) {
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+
 /* ============================================================
    End of Organized Code
 ============================================================ */
