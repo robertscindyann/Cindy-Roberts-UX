@@ -655,6 +655,9 @@ footer .tagline {
   padding: 1rem;
 }
 
+/* ============================================================
+   Competitive Analysis & Responsive Table
+============================================================ */
 .competitive-analysis {
   margin: 3rem 0;
   background: #fafafa;
@@ -665,7 +668,7 @@ footer .tagline {
 
 .competitive-analysis h4 {
   margin-bottom: 0.75rem;
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-serif);
   font-weight: 600;
 }
 
@@ -674,24 +677,34 @@ footer .tagline {
   color: #444;
 }
 
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 1.5rem;
+}
+
 .comparison-table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 500px; /* Keeps columns readable on small screens */
+  text-align: left;
+  border: 1px solid #eee;
+}
+
+.comparison-table th,
+.comparison-table td {
+  border: 1px solid #eee;
+  padding: 0.75rem;
   font-size: 0.95rem;
-  /* text-align: center; */
+  color: #333;
 }
 
 .comparison-table th {
   background: #1b2b4d; /* Haven navy */
   color: #fff;
-  padding: 0.75rem;
-  font-weight: 500;
-  text-align: left;
-}
-
-.comparison-table td {
-  padding: 0.75rem;
-  border-top: 1px solid #e5e5e5;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .comparison-table tr:nth-child(even) {
@@ -701,22 +714,28 @@ footer .tagline {
 .comparison-table tr:hover {
   background: #eef5f4;
 }
+
 .table-summary {
   margin-top: 1rem;
   color: #444;
   font-size: 0.95rem;
   line-height: 1.7;
-  /* text-align: center; */
-  /* max-width: 650px;
-  margin-left: auto;
-  margin-right: auto; */
 }
 
 .competitive-analysis figcaption {
   font-size: 0.85rem;
-  /* text-align: center; */
+
   margin-top: 1rem;
   color: #666;
+}
+
+/* Scrollbar style for small screens */
+.table-container::-webkit-scrollbar {
+  height: 6px;
+}
+.table-container::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
 }
 
 /* Responsive tweak for narrow screens */
