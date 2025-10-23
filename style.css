@@ -680,8 +680,31 @@ footer .tagline {
 .table-container {
   width: 100%;
   overflow-x: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   margin-top: 1.5rem;
+  position: relative;
+  scrollbar-color: var(--accent) #f1f1f1;
+  scrollbar-width: thin;
+}
+
+/* Scrollbar visible across browsers */
+.table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #c07a84; /* slightly darker accent on hover */
 }
 
 .comparison-table {
@@ -724,18 +747,15 @@ footer .tagline {
 
 .competitive-analysis figcaption {
   font-size: 0.85rem;
-
   margin-top: 1rem;
   color: #666;
 }
-
-/* Scrollbar style for small screens */
-.table-container::-webkit-scrollbar {
-  height: 6px;
-}
-.table-container::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 4px;
+.scroll-hint {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 0.5rem;
+  font-style: italic;
 }
 
 /* Responsive tweak for narrow screens */
